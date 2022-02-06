@@ -22,7 +22,7 @@ hdiutil create -megabytes ${SIZE} -type SPARSE -fs HFS+J -volname $2 $3
 hdiutil attach $3.sparseimage
 
 # copy content to it
-cp -R $1 /Volumes/$2/
+/bin/cp -R $1 /Volumes/$2/
 
 # detach it
 DEVICE=`mount | grep $2 | awk '{print $1}'`
